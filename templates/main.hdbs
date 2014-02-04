@@ -1,0 +1,4 @@
+<div>
+	<button id="createDefect" type="button" class="btn btn-inverse">Create as VersionOne Defect</button>
+</div>
+
