@@ -1,4 +1,14 @@
-<div>
-	<button id="createDefect" type="button" class="btn btn-inverse">Create as VersionOne Defect</button>
+<div id="main_create">
+  <center>
+	  <button id="createDefect" type="button" class="btn btn-inverse createDefect">Create as VersionOne Defect</button>
+  </center>
+</div>
+
+</br>
+
+<div id="main_search">
+  <center>
+    <button id="searchDefect" type="button" class="btn btn-inverse createDefect">Search for VersionOne Defect</button>
+  </center>  
 </div>
 

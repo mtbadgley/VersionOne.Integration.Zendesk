@@ -1,0 +1,19 @@
+<div id="defect_info">
+	<p><b>Defect ID: </b>
+		<a target="_blank" href="https://www11.v1host.com/V1Integrations/defect.mvc/Summary?oidToken={{Assets.0.id}}">{{Assets.0.Attributes.Number.value}}</a>
+	</p>
+	<p><b>Status: </b>{{Assets.0.Attributes.Status.value}}</p>
+</div>
+
+</br>
+
+<div>
+	<center>
+		<button style="width:100px" type="button" class="btn btn-inverse updateDefect">Update</button>
+		<button style="width:100px" type="button" class="btn btn-inverse unassignDefect">Unassign</button>
+	</center>
+</div>
+
+
+
+

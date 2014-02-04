@@ -7,6 +7,6 @@
 
 <footer>
 	<div id="bug_link">
-		<a href="mailto:{{author.email}}">VersionOne Contact</a>
+		<a href="mailto:{{author.email}}">Found an issue?</a>
 	</div>
 </footer>
