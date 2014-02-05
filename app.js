@@ -8,13 +8,16 @@
 	var v1projectID = 'Scope:1136';
 	var v1SourceID = 'StorySource:1137';
 	var v1DefectId = '';
+	var v1AssetIDCustomField = 'custom_field_21479374';
+	var v1AssetNumberCustomField = 'custom_field_21481134';
+	var v1ReleaseNumberCustomField = 'custom_field_21481584';
+	var v1defectTag = 'v1defect';
 
   return {
   
     events: {
       'app.activated':'showMain',
       'click .createDefect': 'createDefect',
-      'click .updateDefect': 'updateDefect',
       'click .unassignDefect': 'unassignDefect'
     },
 	
@@ -44,7 +47,7 @@
 
 		getDefect: function (defectID) {
 		    return {
-		        url: v1url + '/rest-1.v1/Data/Defect?Accept=application/json&sel=Number,Status.Name,Owners.Name&where=ID="' + defectID + '"',
+		        url: v1url + '/rest-1.v1/Data/Defect?Accept=application/json&sel=Number,Status.Name,Owners.Name,Priority.Name,FixedInBuild,ChangeDate&where=ID="' + defectID + '"',
 		        type: 'GET',
 		        dataType: 'application/xml',
 		        headers: { 'Authorization': 'Basic ' + Base64.encode(v1username + ':' + v1password) },
@@ -53,8 +56,18 @@
 		}
 	},	
 	
-	showMain: function() {
-		this.switchTo('defectInfo');
+	showMain: function () {
+
+        //Hides the v1 asset ID custom field, but not for new tickets.
+	    //this.ticketFields(v1NumberCustomFieldID).hide();
+
+	    if (this.ticket().customField(v1AssetIDCustomField) != "") {
+	        var request = this.ajax('getDefect', this.ticket().customField(v1AssetIDCustomField));
+	        request.always(this.showDefect);
+	    }
+	    else {
+	        this.switchTo('main');
+	    }
     },
 
 	showError: function(data) {
@@ -66,6 +79,7 @@
 	    console.log(data);
 
 	    if (data.status == '200') {
+	        this.ticket().tags().add(v1defectTag);
 	        var request = this.ajax('getDefect', v1DefectId);
 	        request.always(this.showDefect);
 	    }
@@ -80,8 +94,22 @@
 	    console.log(data);
 
 	    if (data.status == '200') {
-	        var responseJSON = JSON.parse(data.responseText);
-	        this.switchTo('defectInfo', responseJSON);
+
+	        var defectJSON = JSON.parse(data.responseText);
+	        this.ticket().customField(v1AssetIDCustomField, defectJSON.Assets[0].id);
+	        this.ticket().customField(v1AssetNumberCustomField, defectJSON.Assets[0].Attributes.Number.value);
+
+	        var newDate = new Date(defectJSON.Assets[0].Attributes.ChangeDate.value);
+	        //alert(newDate.getUTCDate());
+
+	        this.switchTo('defectInfo', {
+	            defectID: defectJSON.Assets[0].id,
+	            defectNumber: defectJSON.Assets[0].Attributes.Number.value,
+	            defectStatus: defectJSON.Assets[0].Attributes["Status.Name"].value,
+	            defectPriority: defectJSON.Assets[0].Attributes["Priority.Name"].value,
+	            defectFixedInBuild: defectJSON.Assets[0].Attributes.FixedInBuild.value,
+	            defectChangeDate: defectJSON.Assets[0].Attributes.ChangeDate.value
+	        });
 	    }
 	    else {
 	        this.switchTo('error');
@@ -100,6 +128,7 @@
 		xmlPayload += '<Attribute name="Description" act="set">' + this.ticket().description() + '</Attribute>';
 		xmlPayload += '<Relation name="Source" act="set"><Asset idref="' + v1SourceID + '" /></Relation>';
 		xmlPayload += '<Attribute name="FoundBy" act="set">' + this.ticket().requester().email() + '</Attribute>';
+		xmlPayload += '<Attribute name="FoundInBuild" act="set">' + this.ticket().customField(v1ReleaseNumberCustomField) + '</Attribute>';
 		xmlPayload += '</Asset>';
 		console.log('xmlPayload: ' + xmlPayload);
 
@@ -119,7 +148,7 @@
 	    if (data.status == '200') {
 
 	        var xmlPayload = '<Asset>';
-	        xmlPayload += '<Attribute name="OnMenu" act="set">false</Attribute>';
+	        xmlPayload += '<Attribute name="OnMenu" act="set">true</Attribute>';
 	        xmlPayload += '<Attribute name="URL" act="set">' + ticketUrl + '</Attribute>';
 	        xmlPayload += '<Attribute name="Name" act="set">Zendesk #' + ticketId + '</Attribute>';
 	        xmlPayload += '<Relation name="Asset" act="set"><Asset idref="' + v1DefectId + '" /></Relation>';
@@ -135,12 +164,11 @@
 
 	},
 
-	updateDefect: function () {
-	    alert('Update...');
-	},
-
 	unassignDefect: function () {
-	    alert('Unassign...');
+	    this.ticket().customField(v1AssetIDCustomField, "");
+	    this.ticket().customField(v1AssetNumberCustomField, "");
+	    this.ticket().tags().remove(v1defectTag);
+	    this.switchTo('main');
 	},
 
 	getDefectId: function(defect) {
