@@ -1,54 +1,10 @@
 {
-  "app": {
-    "package": "app_name",
-    "description": {
-      "value": "Play the famous zen tunes in your help desk.",
-      "title": "app description"
-    },
-    "name": {
-      "value": "Buddha Machine",
-      "title": "app name"
-    }
-  },
-
-  "loading": {
-    "value": "Welcome to this Sample App",
-    "title": "loading placeholder"
-  },
-
-  "fetch": {
-    "done": {
-      "value": "Good",
-      "title": "fetch success"
-    },
-    "fail": {
-      "value": "failed to fetch information from the server",
-      "title": "fetch failure"
-    }
-  },
-
-  "id": {
-    "value": "ID",
-    "title": "user id"
-  },
-
-  "email": {
-    "value": "Email",
-    "title": "user email"
-  },
-
-  "name": {
-    "value": "Name",
-    "title": "user name"
-  },
-
-  "role": {
-    "value": "Role",
-    "title": "user role"
-  },
-
-  "groups": {
-    "value": "Groups",
-    "title": "user groups"
-  }
+	"app": {
+		"description": "VersionOne Integration for Zendesk",
+		"parameters": {
+			"v1url": { "label": "Url", "helpText": "The URL to your VersionOne instance." },
+			"v1username" : { "label": "Username", "helpText": "The username used to authenticate with VersionOne."  },
+			"v1password" : { "label": "Password", "helpText": "The password used to authenticate with VersionOne." }
+		}
+	}
 }

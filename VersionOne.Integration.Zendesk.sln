@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{A1D39184-BD90-44AA-99FD-A5C1AE5124E3}"
 	ProjectSection(SolutionItems) = preProject
+		assets\help.png = assets\help.png
 		assets\logo-small.png = assets\logo-small.png
 		assets\logo.png = assets\logo.png
 	EndProjectSection
@@ -31,6 +32,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "translations", "translation
 		translations\en.json = translations\en.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{F73ADCEC-A870-4542-97E2-8EE5D8CD94E3}"
+	ProjectSection(SolutionItems) = preProject
+		doc\CONFIGURATION.md = doc\CONFIGURATION.md
+		doc\USAGE.md = doc\USAGE.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +46,6 @@ Global
 		{A1D39184-BD90-44AA-99FD-A5C1AE5124E3} = {01B7C44D-D643-4AEB-8035-C6CF8322B316}
 		{00B0A82C-B8A0-4584-A8D7-0CA7876B99E0} = {01B7C44D-D643-4AEB-8035-C6CF8322B316}
 		{91F69155-759D-494F-8C40-44CA64B085A0} = {01B7C44D-D643-4AEB-8035-C6CF8322B316}
+		{F73ADCEC-A870-4542-97E2-8EE5D8CD94E3} = {01B7C44D-D643-4AEB-8035-C6CF8322B316}
 	EndGlobalSection
 EndGlobal

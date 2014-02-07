@@ -1,12 +1,17 @@
 <header>
   <span class="logo"/>
-  <h3>{{setting "name"}}</h3>
+  <h3>{{setting "name"}}  </h3>
+  <!--
+  <a target="_blank" href="https://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/doc/USAGE.md">
+    <img src="../help.png"></img>
+  </a>
+  -->
 </header>
 
 <section data-main/>
 
 <footer style="padding-top:0px;">
-	<div id="bug_link">
-		<a href="mailto:{{author.email}}">Found an issue?</a>
+	<div id="help_link">
+    <a style="display:inline;" target="_blank" href="https://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/doc/USAGE.md">Help</a>
 	</div>
 </footer>

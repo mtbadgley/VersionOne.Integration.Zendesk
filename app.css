@@ -1,5 +1,5 @@
-#bug_link { 
-  font-size: 80%;
+#help_link { 
+  font-size: 100%;
 }
 
 #defect_info { 
@@ -26,6 +26,10 @@ table {
     font-size: small;
 }
 
+h3 {
+    display: inline;
+}
+
 .spinner {
     visibility: hidden;
 }
@@ -44,7 +48,7 @@ table {
     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
     font-weight:bold; 
     color: #FFFFFF;
-    background-color: #a90329; 
+    background-color: #7C1E3F;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#a90329), to(#6d0019));
     background-image: -webkit-linear-gradient(top, #a90329, #6d0019);
     background-image: -moz-linear-gradient(top, #a90329, #6d0019);
