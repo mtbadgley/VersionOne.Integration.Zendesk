@@ -1,4 +1,6 @@
+</br>
 <p>This ticket is associated with the following VersionOne defect:</p>
+</br>
 
 <div id="defect_info">
 	<table width="80%">
@@ -29,9 +31,12 @@
 
 <div>
 	<center>
-		<button style="width:100px" type="button" class="btn btn-inverse unassignDefect">Unassign</button>
+		<button type="button" class="v1_button unassignDefect">Unassign</button>
 	</center>
 </div>
+
+</br>
+</br>
 
 
 

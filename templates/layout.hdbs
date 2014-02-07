@@ -5,7 +5,7 @@
 
 <section data-main/>
 
-<footer>
+<footer style="padding-top:0px;">
 	<div id="bug_link">
 		<a href="mailto:{{author.email}}">Found an issue?</a>
 	</div>
