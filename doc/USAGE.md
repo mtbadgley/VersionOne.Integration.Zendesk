@@ -4,13 +4,13 @@ The VersionOne Integration for Zendesk allows user-agents to create new VersionO
 
 Once installed, the integration will appear in the Zendesk sidebar along with any other applications that may be installed.
 
-![alt text](https://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/imgs/main_form.png)
+![alt text](http://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/imgs/main_form.png)
 
 ### Creating a VersionOne Defect from a Zendesk Ticket ###
 
 To create a VersionOne defect from the currently opened ticket, simply click the `Create Defect` button. Once the defect has been created in VersionOne, the defect information form will appear as follows:
 
-![alt text](https://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/imgs/defect_info.png)
+![alt text](http://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/imgs/defect_info.png)
 
 ### Associating a Zendesk Ticket with an Existing VersionOne Defect ###
 
