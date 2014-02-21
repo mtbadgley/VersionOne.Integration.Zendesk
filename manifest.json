@@ -29,5 +29,41 @@
     "name": "v1password",
     "type": "password",
     "required": true
+  },
+
+  {
+    "name": "v1project",
+    "type": "text",
+    "required": true
+  },
+
+  {
+    "name": "v1source",
+    "type": "text",
+    "required": true
+  },
+
+  {
+    "name": "v1assetIDField",
+    "type": "text",
+    "required": true
+  },
+
+  {
+    "name": "v1assetNumberField",
+    "type": "text",
+    "required": true
+  },
+
+  {
+    "name": "v1assetStatusField",
+    "type": "text",
+    "required": true
+  },
+
+  {
+    "name": "v1releaseNumberField",
+    "type": "text",
+    "required": true
   }]
 }

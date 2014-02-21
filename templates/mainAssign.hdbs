@@ -1,0 +1,24 @@
+</br>
+<p>Zendesk tickets can be created as new VersionOne defects or associated with existing VersionOne defects.</p>
+</br>
+</br>
+
+<div id="background_box">
+  <p>Create the ticket as a new defect:</p>
+  </br>
+  <center>
+	  <button id="createDefect" type="button" class="v1_button createDefect">Create as VersionOne Defect</button>
+  </center>
+</div>
+
+<div id="background_box">
+  <p>Associate the ticket with an existing defect:</p>
+  </br>
+  <input id="txtSearch" type="text" style="width:69%"></input>
+  <button id="assignDefect" type="button" style="width:25%;height:30px;padding:0px;vertical-align: middle;" class="v1_button assignDefect">Assign</button>
+</div>
+
+<center>
+  <span class="spinner">{{spinner "dotted"}}</span>
+</center>
+

@@ -4,7 +4,13 @@
 		"parameters": {
 			"v1url": { "label": "Url", "helpText": "The URL to your VersionOne instance." },
 			"v1username" : { "label": "Username", "helpText": "The username used to authenticate with VersionOne."  },
-			"v1password" : { "label": "Password", "helpText": "The password used to authenticate with VersionOne." }
+			"v1password" : { "label": "Password", "helpText": "The password used to authenticate with VersionOne." },
+			"v1project" : { "label": "Project", "helpText": "The OID of the VersionOne project that new defects will be assigned to." },
+			"v1source" : { "label": "Source", "helpText": "The OID of the Source value used for new defects." },
+			"v1assetIDField" : { "label": "V1 Asset ID Custom Field", "helpText": "The Zendesk custom field name for the V1 asset ID." },
+			"v1assetNumberField" : { "label": "V1 Asset Number Custom Field", "helpText": "The Zendesk custom field name for the V1 asset number." },
+			"v1assetStatusField" : { "label": "V1 Asset Status Custom Field", "helpText": "The Zendesk custom field name for the V1 asset status." },
+			"v1releaseNumberField" : { "label": "V1 Release Number Custom Field", "helpText": "The Zendesk custom field name for the V1 release number." }
 		}
 	}
 }
