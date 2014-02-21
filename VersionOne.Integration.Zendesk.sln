@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 		templates\error.hdbs = templates\error.hdbs
 		templates\layout.hdbs = templates\layout.hdbs
 		templates\main.hdbs = templates\main.hdbs
+		templates\mainAssign.hdbs = templates\mainAssign.hdbs
 		templates\success.hdbs = templates\success.hdbs
 	EndProjectSection
 EndProject
