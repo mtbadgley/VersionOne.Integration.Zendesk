@@ -6,6 +6,8 @@ Once installed, the integration will appear in the Zendesk sidebar along with an
 
 ![alt text](https://github.com/aceybunch/VersionOne.Integration.Zendesk/blob/master/imgs/main_form.png)
 
+![alt text](../imgs/main_form.png)
+
 ### Creating a VersionOne Defect from a Zendesk Ticket ###
 
 To create a VersionOne defect from the currently opened ticket, simply click the `Create Defect` button. Once the defect has been created in VersionOne, the defect information form will appear as follows:
